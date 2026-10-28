@@ -1,0 +1,63 @@
+### 1. Testar CPF com tamanho incorreto (Deve retornar erro 400)
+POST http://localhost:3000/funcionario/cadastrar
+Content-Type: application/json
+
+{
+    "codFuncionario": "1",
+    "nome": "eliel",
+    "email": "eliel@gmail.com",
+    "senha": "123",
+    "cpf": "12345",
+}
+
+### 2. Testar CPF com tamanho correto 
+POST http://localhost:3000/funcionario/cadastrar
+Content-Type: application/json
+
+{
+    "codFuncionario": "1",
+    "nome": "eliel",
+    "email": "eliel@gmail.com",
+    "senha": "123",
+    "cpf": "123.456.789-01",
+}
+
+
+### 3. Testar cadastro do motorista 
+POST http://localhost:3000/motorista/cadastrar
+Content-Type: application/json
+
+{
+    "codMotorista": "1",
+    "nome": "eliel",
+    "cnh": "11122233344",
+    "cpf": "123.456.789-01",
+    "telefone": "48991004282",
+}
+
+
+### 4. Testar cadastro da carga 
+POST http://localhost:3000/carga/cadastrar
+Content-Type: application/json
+
+{
+    "codCarga": "1",    
+    "descricao": "teste",
+    "peso": "45.6",
+    "volume": "800",
+    "codigoRastreio": "12345678901",
+    "idMorista": "1",
+}
+
+### 5. Testar cadastro da entrega 
+POST http://localhost:3000/entrega/cadastrar
+Content-Type: application/json
+
+{
+    "codEntrega": "1",
+    "cidadeDestino": "TIJUCAS",
+    "statusAtual": "ENTREGUE",
+    "data": "12-12-2021",
+    "hora": "12:00",
+    "idCarga": "1",
+}
